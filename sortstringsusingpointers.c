@@ -14,8 +14,7 @@
  
         for (i = 0; i < n; i++) 
         {
-            int l=strlen(a[i]);
-            a[i]=malloc(l+1);
+            a[i]=malloc(100);
             scanf("%s",a[i]);
         }
  
@@ -25,16 +24,16 @@
             {
                 if (strcmp(a[i],a[j]) > 0) 
                 {
-                    strcpy(temp,a[i]);
-                    strcpy(a[i],a[j]);
-                    strcpy(a[j], temp);
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]= temp;
                 }
             }
         }
         printf("The sorted string is\n");
         for (i = 0; i < n; i++) 
         {
-            printf("%s",a[i]);
+            printf("%s\n",a[i]);
         }
  
     }
