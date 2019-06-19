@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -11,13 +12,7 @@ int input(int n,char *a[n])
 		int l=strlen(temp);
 		printf("%d\n",l);
 		a[i]=malloc(l+1);
-		a[i]=temp;
-		printf("%s\n",a[i]);
-	}
-	printf("Sa,ple\n");
-	for(int i=0;i<n;i++)
-	{
-		printf("%s\n",a[i]);
+		strcpy(a[i],temp);
 	}
 }
 int comp(const void *p,const void *q)
