@@ -43,10 +43,10 @@ void sort(int n,struct person s[n])
 	switch(c)
 	{
 		case 1:
-			qsort(s,n,sizeof(int),comp);
+			qsort(s,n,sizeof(struct person),comp);
 		break;
 		case 2:
-			qsort(s,n,sizeof(100),compstring);
+			qsort(s,n,sizeof(struct person),compstring);
 		break;
 	}
 }
