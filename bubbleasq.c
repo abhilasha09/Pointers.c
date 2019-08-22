@@ -17,17 +17,21 @@ int compare(int a,int b)
 {
      if (a >b)
        return 1;
+     else
+        return 0;
 }
-int bubblesort(int a[],int n,int size,int comp)
+int bubblesort(int a[],int n,int size,int *comp(int,int))
 {
-     for(c=0;c<n-1;c++)
+     for(int c=0;c<n-1;c++)
      {
-         for(d=0;d<n-c-1;d++)
+         for(int d=0;d<n-c-1;d++)
          {
-            w=comp(a[d]>a[d+1]);
+            int w=0;
+            int swap=0;
+            w=comp(a[d],a[d+1]);
             if(w==1) 
             {
-                int swap       = a[d];
+                swap       = a[d];
                 a[d]   = a[d+1];
                 a[d+1] = swap;
             }
@@ -36,18 +40,17 @@ int bubblesort(int a[],int n,int size,int comp)
 }
 void main()
 {
-  int n,a,b;
-  a=0;b=0;
+  int n,a1,b;
+  a1=0;b=0;
   get_n(&n);
   int a[n];
   input(n,a);
-  compare(a,b);
   int (*comp)(int,int);  /* function pointer Declaration */
   comp = compare;  /* pointer assignment */
   bubblesort(a,n,sizeof(a),comp);
   printf("Sorted list in ascending order:\n");
  
   for (int c = 0; c < n; c++)
-     printf("%d\n", array[c]);
+     printf("%d\n", a[c]);
  
 }
