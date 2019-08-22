@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 void get_n(int *n)
 {
 	printf("Enter n\n");
